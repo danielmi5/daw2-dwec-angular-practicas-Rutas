@@ -1,0 +1,16 @@
+<!--
+  Plantilla de `UsuarioComponent`.
+  Se muestra una lista de usuarios con enlaces `routerLink` hacia la ruta hija ':id'.
+  Se reserva un `router-outlet` para cargar `UsuarioDetalleComponent` cuando se seleccione un usuario.
+-->
+<h2>Usuarios</h2>
+<ul>
+  @for (usuario of usuarios; track usuario.id) {
+    <li>
+      <a [routerLink]="['/usuarios', usuario.id]">{{ usuario.nombre }}</a>
+    </li>
+  }
+</ul>
+
+<!-- Lugar donde se cargarán las rutas hijas (detalle) -->
+<router-outlet></router-outlet>

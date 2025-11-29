@@ -1,0 +1,46 @@
+.enlaces-practicas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 560px;
+  margin: 16px;
+}
+
+.boton {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Fondo por defecto para los botones, para que el texto blanco sea visible */
+.boton {
+  background-color: #1976d2;
+}
+
+.boton:hover {
+  background-color: #145ea8;
+}
+
+.boton:focus {
+  outline: 3px solid rgba(0,0,0,0.12);
+  outline-offset: 2px;
+}
+
+
+.boton-act1 { background: #2b6cb0; }
+.boton-act1:hover { background: #245a94; }
+
+.boton-act2 { background: #38a169; }
+.boton-act2:hover { background: #2f8956; }
+
+.boton-act3 { background: #dd6b20; }
+.boton-act3:hover { background: #c75c1b; }
+
+.boton-act4 { background: #6b46c1; }
+.boton-act4:hover { background: #5a3bb0; }
+
+.boton-act5 { background: #e53e3e; }
+.boton-act5:hover { background: #c83636; }
