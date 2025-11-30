@@ -1,10 +1,24 @@
+<!-- Menú principal: enlaces a las actividades. Se usa routerLink para navegación SPA -->
 <h1>Prácticas -> Rutas</h1>
+<!-- Controles de autenticación: iniciar / cerrar sesión -->
+<div class="botones-autenticacion">
+  @if (!isLoggedIn()){
+    <button class="boton" (click)="login()">Iniciar sesión</button>
+  } @else {
+    <button class="boton" (click)="logout()">Cerrar sesión</button>
+  }
+  <span class="estado-autenticacion">Estado: {{ isLoggedIn() ? 'Autenticado' : 'No autenticado' }}</span>
+</div>
+
+<!-- Botón de ejemplo para navegar con queryParams -->
+<div class="promo-nav">
+  <button class="boton" (click)="navegarConQuery()">Ir a inicio con promo</button>
+</div>
 
 <nav class="enlaces-practicas">
   <a id="boton-act1" class="boton boton-act1" routerLink="/inicio">Actividad 1: Rutas básicas y routerLink</a>
   <a id="boton-act2" class="boton boton-act2" routerLink="/usuarios" target="_blank">Actividad 2: Parámetros de ruta y rutas hija</a>
-  <a id="boton-act3" class="boton boton-act3" routerLink="/factura" target="_blank">Actividad 3: Lazy loading de módulos</a>
-  <a id="boton-act4" class="boton boton-act4" routerLink="/validador-asincronico" target="_blank">Actividad 4: Route Guards (CanActivate)</a>
+  <a id="boton-act3" class="boton boton-act3" routerLink="/admin" target="_blank">Actividad 3: Lazy loading de módulos</a>
   <a id="boton-act5" class="boton boton-act5" routerLink="/perfil-usuario" target="_blank">Actividad 5: Navigation extras y redirecciones</a>
 </nav>
 

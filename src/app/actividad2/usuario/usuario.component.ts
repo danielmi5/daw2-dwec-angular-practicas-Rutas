@@ -1,38 +1,21 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
+import {CommonModule} from '@angular/common'
 
 /**
- * Componente que lista usuarios.
- * Se declara como componente standalone y exporta una lista estática de ejemplo.
- * Se incluye un `router-outlet` para cargar las rutas hijas (detalle de usuario).
+ * Se usa `UsuarioComponent` para mostrar una lista sencilla de usuarios y proporcionar enlaces hacia las rutas de detalle de cada usuario. Se declara como componente `standalone` para poder importarlo directamente desde las rutas sin necesidad de incluirlo en un módulo.
  */
 @Component({
   selector: 'app-usuario',
   standalone: true,
   imports: [CommonModule, RouterLink, RouterOutlet],
-  templateUrl: './usuario.component.html'
+  template: `
+    <h2>Usuarios</h2>
+    <ul>
+      <li><a [routerLink]="['/usuarios', 1]">Usuario 1</a></li>
+      <li><a [routerLink]="['/usuarios', 2]">Usuario 2</a></li>
+    </ul>
+    <router-outlet></router-outlet>
+  `
 })
-export class UsuarioComponent {
-  /**
-   * Se define una lista estática de usuarios de ejemplo con `id` y `nombre`.
-   */
-  usuarios = [
-    { 
-        id: 1, 
-        nombre: 'Daniel' 
-    },
-    { 
-        id: 2, 
-        nombre: 'Alejandro' 
-    },
-    { 
-        id: 3, 
-        nombre: 'Felipe' 
-    },
-    { 
-        id: 4, 
-        nombre: 'Kevin' 
-    }
-  ];
-}
+export class UsuarioComponent {}

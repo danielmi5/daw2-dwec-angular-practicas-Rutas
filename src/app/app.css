@@ -39,8 +39,9 @@
 .boton-act3 { background: #dd6b20; }
 .boton-act3:hover { background: #c75c1b; }
 
-.boton-act4 { background: #6b46c1; }
-.boton-act4:hover { background: #5a3bb0; }
-
 .boton-act5 { background: #e53e3e; }
 .boton-act5:hover { background: #c83636; }
+
+.promo-nav{
+  margin-top: 5px;
+}

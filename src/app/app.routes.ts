@@ -3,6 +3,8 @@ import { InicioComponent } from './actividad1/inicio/inicio.component';
 import { AcercaComponent } from './actividad1/acerca/acerca.component';
 import { UsuarioComponent } from './actividad2/usuario/usuario.component';
 import { UsuarioDetalleComponent } from './actividad2/usuario/usuario-detalle.component';
+import { AuthGuard } from './actividad4/auth/auth.guard';
+import { NotFoundComponent } from './actividad5/not-found.component';
 
 /**
  * Se definen las rutas de la aplicación.
@@ -29,7 +31,17 @@ export const routes: Routes = [
             }
 		]
 	},
+	{
+		path: 'admin',
+		loadChildren: () => import('./actividad3/admin/admin.module').then(m => m.AdminModule),
+		canLoad: [AuthGuard]
+	},
 
-    // He decidido no usar este código para poder cambiar entre las actividades con los botones de la página principal
-	//{ path: '', redirectTo: 'inicio', pathMatch: 'full' },
+	// Redirección de la raíz a /inicio
+	{ path: '', redirectTo: 'inicio', pathMatch: 'full' },
+
+	// Ruta wildcard para páginas no encontradas (404)
+	{ path: '**', component: NotFoundComponent }
+	
+
 ];
